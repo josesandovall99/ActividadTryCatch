@@ -1,9 +1,8 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.udes.parcial2;
-
-import java.util.ArrayList;
+package co.edu.udes.ejercicio_en_clase;
 
 /**
  *
@@ -11,63 +10,41 @@ import java.util.ArrayList;
  */
 public class Empleado {
 
-    protected String nombre;
-    protected String apellidos;
-    protected String dni;
-    protected String direccion;
-    protected String añosAntiguedad;
-    protected String telefono;
-    protected double salario;
-    protected Empleado supervisor;
-    
+    private String nombre;
+    private double salario;
 
-    public Empleado() {
-    }
-
-    public Empleado(String nombre, String apellidos, String dni, String direccion, String añosAntiguedad, String telefono, double salario) {
+    public Empleado(String nombre, double salario) {
         this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.dni = dni;
-        this.direccion = direccion;
-        this.añosAntiguedad = añosAntiguedad;
-        this.telefono = telefono;
         this.salario = salario;
-        this.supervisor = supervisor;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
     }
 
     
+    
+    
+
     @Override
     public String toString() {
-        return "Empleado{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", direccion=" + direccion + ", a\u00f1osAntiguedad=" + añosAntiguedad + ", telefono=" + telefono + ", salario=" + salario + ", supervisor=" + supervisor + '}';
+        return "-> Empleado";
     }
-
-   
     
-
-//    @Override
-//    public String toString() {
-//        System.out.println("Datos De Empleado{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", direccion=" + direccion + ", añosAntiguedad=" + añosAntiguedad + ", telefono=" + telefono + ", salario=" + salario + '}');
-//        System.out.println("supervisor de "+ nombre+ " :");
-//        System.out.println(this.supervisor);
-//        return null;
-//    }
-
-    public  String cambiarSupervisor(Empleado nuevoSup) {
-
-        supervisor = nuevoSup;
-        return null;
+    public void incrementarsalario(){
+    
+        salario =salario + salario * 0.60;
     }
-
-    
-
-    public double incrementarSalario(double aumentoAnual) {
-        double sueldo = salario + (salario*(aumentoAnual/100));
-        System.out.println("salario incrementado: "+sueldo);
-        return sueldo;
-    }
-
-   
-
-    
-
 }
